@@ -5,7 +5,7 @@
 header{
     display:flex;
     justify-content:space-between;
-    background-color:orange;
+    background-color:rgb(172, 120, 23);
     color:white;
     padding:10px;
     position:sticky;
@@ -16,6 +16,7 @@ header{
     width:100%;
     margin:auto;
     position:fixed;
+   
     top:0;
     bottom:0;
     left:0;
@@ -51,7 +52,7 @@ header a{
     
 }
 .btn-signup{
-    background-color:orange;
+    background-color:rgb(172, 120, 23);
     margin-top:10px;
     padding:7px;
     font-size:20px;
@@ -89,7 +90,7 @@ footer {
     transform: scale(1.1,1.1);
 }
 .btn-service{
-    background-color:cyan;
+    background-color:rgb(5, 27, 26);
     margin-top:10px;
     padding:7px;
     font-size:10px;
@@ -124,4 +125,8 @@ footer {
 }
 section{
     min-height:700px;
+}
+
+body{
+    background-color: rgb(169, 135, 93);
 }
