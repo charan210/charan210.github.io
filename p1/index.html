@@ -1,22 +1,116 @@
-<html>
-  <head>
-    <title>My portfolio</title>
-  </head>
-  <body>
-    <h1>Charan</h1>
-    <h2>Mern Stack Developer</h2>
-    <h3>My Projects</h3>
-    <ol>
-      <li><a href="p1">My Portfolio</a></li>
-    </ol>
-    <hr />
-    <h3>My Assignments</h3>
-    <ol>
-      <li><a href="a1">Assignment 1</a></li>
-      <li><a href="a2">Assignment 2</a></li>
-      <li><a href="a3">Assignment 3</a></li>
-      <li><a href="a4">Assignment 4</a></li>
-      <li><a href="a5">Assignment 5</a></li>
-    </ol>
-  </body>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <h1>CHARAN REDDY</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="home"> 
+                <div class="row">
+                    <div class="box">
+                        <h1 class="title">MERN stack Developer</h1>
+                        <p class="summary">
+                            I'm a passionate developer focused on building clean, scalable, and efficient web applications using the MERN stack. I enjoy turning complex problems into simple, beautiful, and intuitive digital experiences. Let's build something awesome together.
+                        </p>
+                        <p><button class="btn-signup">Know more</button></p>
+                    </div>
+                    <div class="box">
+                        <img src="AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/7CA57A9F85A19A6E4B9A248C1DACA185/WhatsApp Image 2025-05-12 at 10.44.36_1bec1bb7.jpg" class="image" width="400px" alt="No Profile"/>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" style="background-color:cyan">
+                <h1 class="section-title">Projects</h1>
+                <div class="row">
+                    <div class="box">
+                        <h3>Project 1</h3>
+                        <p>A real-time chat application using React and Socket.io with user authentication, message history, and emoji support for a smooth communication experience.</p>
+                        <a href="#">View more</a>
+                    </div>
+                    <div class="box">
+                        <h3>Project 2</h3>
+                        <p>An e-commerce site with a dynamic product catalog, shopping cart, and payment integration. Built using MongoDB, Express, React, and Node.js (MERN stack).</p>
+                        <a href="#">View more</a>
+                    </div>
+                    <div class="box">
+                        <h3>Project 3</h3>
+                        <p>A task management dashboard that allows users to create, update, and track tasks with drag-and-drop features and calendar view. Built with React and Redux.</p>
+                        <a href="#">View more</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" style="background-color:#d6c9f0">
+                <h1 class="section-title">My Services</h1>
+                <div class="row">
+                    <div class="box">
+                        <h3>UI/UX Design</h3>
+                        <p>UI (User Interface) Design focuses on the look and feel of a product — colors, buttons, typography, and layouts.
+UX (User Experience) Design focuses on the overall experience — making sure the product is easy, smooth, and enjoyable to use.</p>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+                    <div class="box">
+                        <h3>Web Design</h3>
+                        <p>It involves building websites and web applications.
+It has two main parts:
+Frontend: What users see (HTML, CSS, JavaScript).
+Backend: Server, database, and application logic (languages like PHP, Python, Node.js).</p>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+                    <div class="box">
+                        <h3>App Design</h3>
+                        <p>It focuses on designing apps specifically for smartphones and tablets.
+It includes UI/UX principles optimized for smaller screens, touch interactions, and mobile performance.</p>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about">
+                <h1 class="section-title">About Me</h1>
+                <div class="about">
+                    <p>Hi, I'm CharanREddy — a full-stack web developer who loves solving real-world problems through code. I specialize in creating dynamic, responsive web apps using JavaScript, React, and Node.js.</p>
+                    <p>I have a keen eye for detail, a love for clean code, and a dedication to continuous learning. I believe in writing maintainable code that not only works but also makes future development easier.</p>
+                    <p>When I'm not coding, I enjoy reading tech blogs, contributing to open-source projects, and exploring new frameworks and libraries to sharpen my skills.</p>
+                    <button class="btn-service">Download CV</button>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <h1 class="section-title">Let's work together</h1>
+                <div class="contact-form">
+                    <h3>Contact Me</h3>
+                    <form action="#" method="POST">
+                        <p><input type="text" name="name" placeholder="Your Name" required></p>
+                        <p><input type="email" name="email" placeholder="Your Email" required></p>
+                        <p><textarea name="message" placeholder="Your Message" rows="5" required></textarea></p>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                    <div class="contact-info">
+                        <p>contact@gmail.com</p>
+                        <p>987654321</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy;2025 charanReddy. All rights reserved.</p>
+        </footer>
+        </div>
+    </body>
 </html>

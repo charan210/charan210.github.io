@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Display</title>
+    <style>
+        input, button {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px 0;
+            display: block;
+            width: 300px;
+        }
+        button {
+            width: 150px;
+            border-radius: 12px;
+        }
+        #output {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="email" placeholder="Enter email">
+    <input type="text" id="number" placeholder="Enter number">
+    <button onclick="displayData()">Submit</button>
+
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
