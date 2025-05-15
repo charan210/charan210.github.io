@@ -1,42 +1,118 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .row {
-        display: flex;
-        justify-content: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruits</title>
+  <style>
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .card {
+      border: 2px solid black;
+      padding: 10px;
+      width: 150px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    .card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+    button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .add-btn {
+      background-color: #007bff;
+      color: white;
+    }
+    .cart-btn {
+      background-color: #28a745;
+      color: white;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fruits</h1>
 
-      .row div {
-        background-color: orange;
-        margin: 10px;
-        padding: 10px;
-        width: 200px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Handling Array of Objects</h1>
-    <div id="container" class="row"></div>
-    <script>
-      const products = [
-        { id: 1, name: "Apple", price: 250, imgUrl: "https://picsum.photos/id/11/200/200" },
-        { id: 2, name: "Orange", price: 100, imgUrl: "https://picsum.photos/id/12/200/200" },
-        { id: 3, name: "Mango", price: 80, imgUrl: "https://picsum.photos/id/13/200/200" },
-      ];
+  <!-- Form to Add Products -->
+  <div>
+    <input type="number" id="id" placeholder="ID" />
+    <input type="text" id="name" placeholder="Name" />
+    <input type="number" id="price" placeholder="Price" />
+    <input type="text" id="imgUrl" placeholder="Image URL" />
+    <button class="add-btn" onclick="addProduct()">Add</button>
+  </div>
+
+  <!-- Container for Displaying Products -->
+  <div id="container" class="row"></div>
+
+  <script>
+    const products = [
+      { id: 1, name: "Apple", price: 250, imgUrl:"https://www.google.com/imgres?q=apple&imgurl=https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fripe-apple-royalty-free-image-1659454396.jpg%3Fcrop%3D0.924xw%3A0.679xh%3B0.0197xw%2C0.212xh%26resize%3D980%3A*&imgrefurl=https%3A%2F%2Fwww.delish.com%2Fkitchen-tools%2Fkitchen-secrets%2Fg40782886%2Ftypes-of-apples-and-uses%2F&docid=55Rp86_a0IHwPM&tbnid=I9pR0bXAr9xpFM&vet=12ahUKEwjrtqKN46WNAxWbRmwGHTKtLQgQM3oECF8QAA..i&w=980&h=981&hcb=2&ved=2ahUKEwjrtqKN46WNAxWbRmwGHTKtLQgQM3oECF8QAA" },
+      { id: 2, name: "Orange", price: 100, imgUrl:" https://www.google.com/imgres?q=orange%20fruit&imgurl=https%3A%2F%2Fwww.jiomart.com%2Fimages%2Fproduct%2Foriginal%2F590000025%2Forange-imported-1-kg-product-images-o590000025-p590000025-0-202410011652.jpg%3Fim%3DResize%3D(420%2C420)&imgrefurl=https%3A%2F%2Fwww.jiomart.com%2Fp%2Fgroceries%2Forange-imported-1-kg%2F590000025&docid=vIHp7EJhILE2vM&tbnid=tu52lZZfTT4aGM&vet=12ahUKEwio87am46WNAxVHSWwGHb2zEAEQM3oECBoQAA..i&w=420&h=420&hcb=2&ved=2ahUKEwio87am46WNAxVHSWwGHb2zEAEQM3oECBoQAA" },
+      { id: 3, name: "Mango", price: 80, imgUrl: "https://www.google.com/imgres?q=mangoes&imgurl=https%3A%2F%2Fwww.svz.com%2Fwp-content%2Fuploads%2F2018%2F05%2FMango.jpg&imgrefurl=https%3A%2F%2Fwww.svz.com%2Fnews-and-blog%2Fmango-king-of-the-fruits%2F&docid=bPEWnkq7aN1ZCM&tbnid=xYe1JeTDlXUAFM&vet=12ahUKEwiv5LWv46WNAxVtUGwGHSUUMVsQM3oECBwQAA..i&w=680&h=490&hcb=2&ved=2ahUKEwiv5LWv46WNAxVtUGwGHSUUMVsQM3oECBwQAA"}
+    ];
+
+    function renderProducts() {
+      const container = document.getElementById("container");
       let str = "";
-      products.map((value) => {
-        str += `<div>
-                <img src=${value.imgUrl}/>
-                <h2>${value.name}</h2>
-                <h3>${value.price}</h3>
-                <button>Add to Cart</button>
-                </div>`;
+      products.forEach(product => {
+        str += `
+          <div class="card">
+            <img src="${product.imgUrl}" alt="${product.name}" />
+            <h2>${product.name}</h2>
+            <h3>₹${product.price}</h3>
+            <button class="cart-btn" onclick="addToCart('${product.name}')">Add to Cart</button>
+          </div>
+        `;
       });
       container.innerHTML = str;
-    </script>
-  </body>
+    }
+
+    function addProduct() {
+      const id = document.getElementById("id").value;
+      const name = document.getElementById("name").value;
+      const price = document.getElementById("price").value;
+      const imgUrl = document.getElementById("imgUrl").value;
+
+      if (id && name && price && imgUrl) {
+        products.push({
+          id: parseInt(id),
+          name: name,
+          price: parseInt(price),
+          imgUrl: imgUrl
+        });
+        renderProducts();
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("imgUrl").value = "";
+      } else {
+        alert("Please fill all fields");
+      }
+    }
+
+    function addToCart(productName) {
+      alert(${productName} added to cart!);
+    }
+
+    renderProducts();
+  </script>
+</body>
 </html>
