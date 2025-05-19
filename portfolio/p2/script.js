@@ -24,6 +24,13 @@ const dec = (id)=>{
  cart[id]-=1;
  dispCart();
 };
+const dispOrderValue = () => {
+  const grandTotal = products.reduce((sum, value) => {
+    return sum + value.price * (cart[value.id] ?? 0);
+  },0);
+  orderValue.innerHTML = `Order Value: ${grandTotal}`;
+};
+
 const dispCart = () => {
   let str = "<h2>Cart</h2>";
   products.map((value) => {
@@ -34,6 +41,7 @@ const dispCart = () => {
     `);
   });
   root.innerHTML = str;
+   dispOrderValue();
 };
 
 const showProducts = () => {
