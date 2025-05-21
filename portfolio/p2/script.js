@@ -40,6 +40,7 @@ const dispCart = () => {
      </div>
     `);
   });
+  
   root.innerHTML = str;
    dispOrderValue();
 };
